@@ -1,0 +1,28 @@
+{
+  "name": "monorepo_rollup_tpl",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "typecheck:ci": "pnpm -r --parallel run typecheck",
+    "build:package1": "rollup -c --environment PACKAGE:package1",
+    "build:package2": "rollup -c --environment PACKAGE:package2",
+    "build": "concurrently 'pnpm:build:*'"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.27.4",
+    "@babel/plugin-transform-react-jsx": "^7.27.1",
+    "@babel/plugin-transform-typescript": "^7.27.1",
+    "@babel/preset-env": "^7.27.2",
+    "@rollup/plugin-babel": "^6.0.4",
+    "@rollup/plugin-commonjs": "^28.0.3",
+    "@rollup/plugin-node-resolve": "^16.0.1",
+    "concurrently": "^9.1.2",
+    "rollup": "^4.42.0",
+    "rollup-plugin-dts": "^6.2.1"
+  }
+}
