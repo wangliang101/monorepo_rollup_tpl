@@ -1,3 +1,5 @@
-let a: string = '123';
+const add = (a: number, b: number) => {
+  return a + b;
+};
 
-export { a };
+export { add };
