@@ -10,10 +10,12 @@
     "test": "jest --passWithNoTests --config jest.config.ts",
     "eslint": "eslint --fix '**/src/*.{js,jsx,ts,tsx}'",
     "eslint:ci": "eslint '**/src/*.{js,jsx,ts,tsx}'",
+    "prettier": "prettier '**/{examples,src,__tests__,website}/**/*.{js,jsx,ts,tsx,md}' --write",
+    "prettier:ci": "prettier '**/{examples,src,__tests__,website}/**/*.{js,jsx,ts,tsx,md}' --list-different",
     "typecheck:ci": "pnpm -r --parallel run typecheck",
+    "build": "concurrently 'pnpm:build:*'",
     "build:package1": "rollup -c --environment PACKAGE:package1",
-    "build:package2": "rollup -c --environment PACKAGE:package2",
-    "build": "concurrently 'pnpm:build:*'"
+    "build:package2": "rollup -c --environment PACKAGE:package2"
   },
   "prettier": {
     "semi": false,
