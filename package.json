@@ -4,6 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "changeset": "changeset",
+    "version": "changeset version",
+    "release": "changeset publish",
     "test": "jest --passWithNoTests --config jest.config.ts",
     "eslint": "eslint --fix '**/src/*.{js,jsx,ts,tsx}'",
     "eslint:ci": "eslint '**/src/*.{js,jsx,ts,tsx}'",
