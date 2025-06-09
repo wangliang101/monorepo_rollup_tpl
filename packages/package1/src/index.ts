@@ -1,9 +1,9 @@
 const add = (a: number, b: number) => {
-  return a + b;
-};
+  return a + b
+}
 
-const a: string = '123';
+const a: string = '123'
 
-const b: string = '456';
+const b: string = '456'
 
-export { add, a, b };
+export { add, a, b }
