@@ -1,6 +1,6 @@
-import {themes as prismThemes} from 'prism-react-renderer';
-import type {Config} from '@docusaurus/types';
-import type * as Preset from '@docusaurus/preset-classic';
+import { themes as prismThemes } from 'prism-react-renderer'
+import type { Config } from '@docusaurus/types'
+import type * as Preset from '@docusaurus/preset-classic'
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
@@ -33,7 +33,7 @@ const config: Config = {
   // may want to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'en',
-    locales: ['en'],
+    locales: ['en', 'zh'],
   },
 
   presets: [
@@ -85,7 +85,7 @@ const config: Config = {
           position: 'left',
           label: 'Tutorial',
         },
-        {to: '/blog', label: 'Blog', position: 'left'},
+        { to: '/blog', label: 'Blog', position: 'left' },
         {
           href: 'https://github.com/facebook/docusaurus',
           label: 'GitHub',
@@ -143,6 +143,21 @@ const config: Config = {
       darkTheme: prismThemes.dracula,
     },
   } satisfies Preset.ThemeConfig,
-};
+  themes: [
+    // 其他主题...
+    [
+      '@easyops-cn/docusaurus-search-local',
+      {
+        // 可选配置项
+        indexDocs: true, // 索引文档
+        indexBlog: true, // 索引博客
+        language: ['en', 'zh'], // 支持中英文分词
+        docsRouteBasePath: 'docs', // docs路径
+        blogRouteBasePath: 'blog', // blog路径
+        highlightSearchTermsOnTargetPage: true, // 在目标页面高亮搜索词
+      },
+    ],
+  ],
+}
 
-export default config;
+export default config
